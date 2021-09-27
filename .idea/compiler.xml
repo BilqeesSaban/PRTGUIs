@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Landing Page" />
+        <module name="PRTGUIs" />
       </profile>
     </annotationProcessing>
   </component>

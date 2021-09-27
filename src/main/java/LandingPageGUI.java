@@ -23,7 +23,7 @@ public class LandingPageGUI extends JFrame implements ActionListener
 
         btnProfile = new JButton("Profile");
         btnFoodMenu = new JButton("FoodMenu");
-        btnOrders = new JButton("Orders,");
+        btnOrders = new JButton("Orders");
         btnAbout = new JButton("About");
         btnHelp = new JButton("Help");
         btnLogout = new JButton("Logout");
@@ -109,6 +109,15 @@ public class LandingPageGUI extends JFrame implements ActionListener
          ProfileGUI profile = new ProfileGUI();
          this.dispose();
         }
-
+        if (e.getActionCommand().equals("Orders"))
+        {
+            OrdersGUI profile = new OrdersGUI();
+            this.dispose();
+        }
+        if (e.getActionCommand().equals("About"))
+        {
+            AboutGUI profile = new AboutGUI();
+            this.dispose();
+        }
     }
 }
