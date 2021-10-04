@@ -53,15 +53,10 @@ public class LandingPageGUI extends JFrame implements ActionListener
 
         pane.setBackground(greenMint);
 
-        c.fill = GridBagConstraints.NONE;
-        c.insets = new Insets(10,50,10,50);
         c.weightx = 0.1;
         c.weighty = 0.1;
-        c.gridx = 0;
-        c.gridy = 0;
-        c.gridheight = 7;
+
         c.anchor = GridBagConstraints.CENTER;
-//        pane.add(lblIcon, c);
 
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridheight = 1;
@@ -106,17 +101,27 @@ public class LandingPageGUI extends JFrame implements ActionListener
     {
         if (e.getActionCommand().equals("Profile"))
         {
-         ProfileGUI profile = new ProfileGUI();
+         ProfileGUI profileGUI = new ProfileGUI();
          this.dispose();
         }
         if (e.getActionCommand().equals("Orders"))
         {
-            OrdersGUI profile = new OrdersGUI();
+            OrdersGUI ordersGUI = new OrdersGUI();
             this.dispose();
         }
         if (e.getActionCommand().equals("About"))
         {
-            AboutGUI profile = new AboutGUI();
+            AboutGUI aboutGUI = new AboutGUI();
+            this.dispose();
+        }
+        if (e.getActionCommand().equals("Help"))
+        {
+            HelpGUI helpGUI = new HelpGUI();
+            this.dispose();
+        }
+        if (e.getActionCommand().equals("Logout"))
+        {
+            LogoutGUI logoutGUI = new LogoutGUI();
             this.dispose();
         }
     }

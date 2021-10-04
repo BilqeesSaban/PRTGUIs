@@ -38,7 +38,6 @@ public class ProfileGUI extends JFrame implements ActionListener
         ftButtons = new Font("Arial", Font.PLAIN, 19);
 
         lblHeading.setFont(ftHeading);
-        lblHeading.setForeground(Color.WHITE);
 
         tblDetails.setFont(ftContent);
 

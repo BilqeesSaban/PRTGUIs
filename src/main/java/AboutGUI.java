@@ -9,20 +9,18 @@ public class AboutGUI extends JFrame implements ActionListener
     final static boolean shouldWeightX = true;
     final static boolean RIGHT_TO_LEFT = false;
 
-    private JLabel lblHeading;
+    private JLabel lblHeading, text;
     private JButton btnMainMenu;
     private Font ftContent, ftHeading, ftButtons;
-    private JTextField text;
+
 
     public AboutGUI()
     {
         super("About Page");
 
-
+        Color greenMint = new Color(159,234,201);
         lblHeading = new JLabel("About Us");
-
-        text = new JTextField("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.");
-
+        text= new JLabel("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua");
         btnMainMenu = new JButton("Main Menu");
 
         ftHeading = new Font("Arial", Font.BOLD, 40);
@@ -30,7 +28,6 @@ public class AboutGUI extends JFrame implements ActionListener
         ftButtons = new Font("Arial", Font.PLAIN, 19);
 
         lblHeading.setFont(ftHeading);
-        lblHeading.setForeground(Color.WHITE);
 
         btnMainMenu.setFont(ftButtons);
 
@@ -40,30 +37,35 @@ public class AboutGUI extends JFrame implements ActionListener
         pane.setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
 
-        pane.setBackground(Color.WHITE);
+        pane.setBackground(greenMint);
 
-        c.fill = GridBagConstraints.NONE;
-        c.insets = new Insets(40,50,40,50);
         c.weightx = 0.1;
         c.weighty = 0.1;
-        c.gridwidth = 1;
-        c.gridy = 0;
-        c.anchor = GridBagConstraints.CENTER;
-        pane.add(lblHeading, c);
 
-        c.ipadx = 700;
-        c.ipady = 50;
+        c.anchor = GridBagConstraints.CENTER;
 
         c.fill = GridBagConstraints.HORIZONTAL;
-        c.insets = new Insets(10,50,10,50);
-
-        c.ipadx = 200;
+        c.gridheight = 1;
         c.ipady = 20;
+        c.ipadx = 100;
+        c.insets = new Insets(50,50,10,50);
+        c.gridx = 1;
+        c.gridy = 0;
+        pane.add(lblHeading, c);
+
+        c.insets = new Insets(10,50,10,50);
+        c.gridy++;
+        pane.add(text, c);
+
+        c.gridy++;
+        pane.add(btnMainMenu, c);
+
 
         c.insets = new Insets(50,10,20,10);
-        btnMainMenu.setBackground(Color.WHITE);
+        btnMainMenu.setBackground(greenMint);
         c.gridy = 2;
         pane.add(btnMainMenu, c);
+
 
         getContentPane().add(pane,BorderLayout.CENTER);
         setTitle("About");
