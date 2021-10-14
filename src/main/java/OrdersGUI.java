@@ -5,13 +5,11 @@ import java.awt.event.ActionListener;
 
 public class OrdersGUI extends JFrame implements ActionListener
 {
-    final static boolean shouldFill = true;
-    final static boolean shouldWeightX = true;
-    final static boolean RIGHT_TO_LEFT = false;
 
     private JTable tblDetails;
     private JLabel lblHeading;
     private JButton btnMainMenu;
+    private JButton btnAdd;
     private Font ftContent, ftHeading, ftButtons;
 
     public OrdersGUI()
@@ -31,6 +29,7 @@ public class OrdersGUI extends JFrame implements ActionListener
         tblDetails = new JTable(data, columnNames);
 
         btnMainMenu = new JButton("Main Menu");
+        btnAdd = new JButton("Add Order");
 
         ftHeading = new Font("Arial", Font.BOLD, 40);
         ftContent = new Font("Arial", Font.PLAIN, 17);
@@ -46,8 +45,10 @@ public class OrdersGUI extends JFrame implements ActionListener
         JScrollPane sp = new JScrollPane(tblDetails);
 
         btnMainMenu.setFont(ftButtons);
+        btnAdd.setFont(ftButtons);
 
         btnMainMenu.addActionListener(this);
+        btnAdd.addActionListener(this);
 
         JPanel pane = new JPanel();
         pane.setLayout(new GridBagLayout());
@@ -73,11 +74,17 @@ public class OrdersGUI extends JFrame implements ActionListener
         c.gridy = 1;
         pane.add(sp, c);
 
-        c.ipadx = 200;
+        c.ipadx = 20;
         c.ipady = 20;
-
         c.insets = new Insets(50,10,20,10);
-        btnMainMenu.setBackground(Color.WHITE);
+        btnMainMenu .setBackground(Color.WHITE);
+        c.gridy = 2;
+        pane.add(btnAdd, c);
+
+        c.ipadx = 20;
+        c.ipady = 20;
+        c.insets = new Insets(50,10,20,10);
+        btnMainMenu .setBackground(Color.WHITE);
         c.gridy = 2;
         pane.add(btnMainMenu, c);
 
@@ -98,6 +105,11 @@ public class OrdersGUI extends JFrame implements ActionListener
             case "Main Menu":
                 LandingPageGUI main = new LandingPageGUI();
                 main.getContentPane();
+                this.dispose();
+                break;
+            case "Add Order":
+                AddOrderGUI order = new AddOrderGUI();
+                order.getContentPane();
                 this.dispose();
             default:
                 break;

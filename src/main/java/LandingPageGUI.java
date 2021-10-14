@@ -104,6 +104,11 @@ public class LandingPageGUI extends JFrame implements ActionListener
          ProfileGUI profileGUI = new ProfileGUI();
          this.dispose();
         }
+        if (e.getActionCommand().equals("FoodMenu"))
+        {
+            FoodMenuGUI foodMenuGUI= new FoodMenuGUI();
+            this.dispose();
+        }
         if (e.getActionCommand().equals("Orders"))
         {
             OrdersGUI ordersGUI = new OrdersGUI();
